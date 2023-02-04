@@ -4,9 +4,11 @@ import Routes from "./Routes";
 
 import {
   AppBridgeProvider,
-  QueryProvider,
+  CustomApolloProvider,
   PolarisProvider,
+  QueryProvider,
 } from "./components";
+import { ShopLocalesProvider } from "./context";
 
 export default function App() {
   // Any .tsx or .jsx files in /pages will become a route
@@ -18,15 +20,27 @@ export default function App() {
       <BrowserRouter>
         <AppBridgeProvider>
           <QueryProvider>
-            <NavigationMenu
-              navigationLinks={[
-                {
-                  label: "Page name",
-                  destination: "/pagename",
-                },
-              ]}
-            />
-            <Routes pages={pages} />
+            <CustomApolloProvider>
+              <ShopLocalesProvider>
+                <NavigationMenu
+                  navigationLinks={[
+                    {
+                      label: "Collections",
+                      destination: "/collections",
+                    },
+                    {
+                      label: "Products",
+                      destination: "/products",
+                    },
+                    {
+                      label: "Locale settings",
+                      destination: "/locales",
+                    },
+                  ]}
+                />
+                <Routes pages={pages}/>
+              </ShopLocalesProvider>
+            </CustomApolloProvider>
           </QueryProvider>
         </AppBridgeProvider>
       </BrowserRouter>
