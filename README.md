@@ -1,8 +1,10 @@
-# Shopify App Template - Node
+# Shopify Native Translations
 
-This is a template for building a [Shopify app](https://shopify.dev/apps/getting-started) using Node and React. It contains the basics for building a Shopify app.
+An open-source Shopify App, that will allow you to translate Collections, Products and respective Metafields and Variants using [Shopify's GraphQL Admin Translations API](https://shopify.dev/api/examples/i18n-app-translations).
 
-Rather than cloning this repo, you can use your preferred package manager and the Shopify CLI with [these steps](#installing-the-template).
+## Settings
+
+Make sure to change the `constants/settings.js` code to correspond to your app's user's needs.
 
 ## Benefits
 
